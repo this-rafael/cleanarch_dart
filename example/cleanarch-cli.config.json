@@ -1,0 +1,76 @@
+{
+    "commands": [
+        {
+            "command": "st",
+            "sufix": "Strategy",
+            "comment": "Generate an Stategy"
+        },
+        {
+            "command": "uc",
+            "sufix": "Usecase",
+            "comment": "Generate an Usecase"
+        },
+        {
+            "command": "pc",
+            "sufix": "Protocol",
+            "comment": "Generate an Protocol"
+        },
+        {
+            "command": "ct",
+            "sufix": "Connector",
+            "comment": "Generate an Connector"
+        }
+    ],
+    "schema": [
+        {
+            "sufix": "Strategy",
+            "extensionSufix": ".strategy",
+            "languageSufix": ".dart",
+            "defaultImplementsSuffix": "",
+            "defaultDependenciesSuffix": "",
+            "useDecorators": [],
+            "folder": "./core/strategies/",
+            "defaultMethods": [
+                "FutureOr<OUTPUT> call({required INPUT input});"
+            ],
+            "abstract": true
+        },
+        {
+            "sufix": "Usecase",
+            "extensionSufix": ".usecase",
+            "languageSufix": ".dart",
+            "defaultImplementsSuffix": "Strategy",
+            "defaultDependenciesSuffix": "Protocol",
+            "useDecorators": [],
+            "defaultMethods": [],
+            "folder": "./core/usecases/",
+            "abstract": false
+        },
+        {
+            "sufix": "Protocol",
+            "extensionSufix": ".protocol",
+            "languageSufix": ".dart",
+            "defaultImplementsSuffix": "",
+            "defaultMethods": [
+                "FutureOr<OUTPUT> call({required INPUT input});"
+            ],
+            "defaultDependenciesSuffix": "",
+            "useDecorators": [],
+            "folder": "./core/protocols/",
+            "abstract": true
+        },
+        {
+            "sufix": "Connector",
+            "extensionSufix": ".connector",
+            "languageSufix": ".dart",
+            "defaultImplementsSuffix": "Protocol",
+            "defaultDependenciesSuffix": "",
+            "defaultMethods": [],
+            "useDecorators": [
+                "import 'dart:async';"
+            ],
+            "folder": "./adapters/connectors/",
+            "abstract": false
+        }
+    ]
+}
